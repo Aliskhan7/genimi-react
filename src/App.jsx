@@ -1,11 +1,11 @@
+import Sidebar from "./components/Siderbar/Sidebar.jsx";
 
 function App() {
-
   return (
-    <div>
-      React
-    </div>
-  )
+    <>
+      <Sidebar />
+    </>
+  );
 }
 
-export default App
+export default App;
