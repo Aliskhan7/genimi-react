@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./sidebar.css";
 import {
   ArrowCounterClockwise,
@@ -10,34 +10,42 @@ import {
 } from "@phosphor-icons/react";
 
 const Sidebar = () => {
+  const [extended, setExtended] = useState(false);
+
   return (
     <div className="sidebar">
       <div className="top">
-        <List size={20} className="menu" />
+        <List
+          onClick={() => setExtended((prev) => !prev)}
+          size={20}
+          className="menu"
+        />
         <div className="new-chat">
           <Plus size={20} />
-          <p>New Chat</p>
+          {extended ? <p>New Chat</p> : null}
         </div>
-        <div className="recent">
-          <p className="recent-title">Recent</p>
-          <div className="recent-entry">
-            <ChatTeardrop size={20} />
-            <p>What is React...</p>
+        {extended ? (
+          <div className="recent">
+            <p className="recent-title">Recent</p>
+            <div className="recent-entry">
+              <ChatTeardrop size={20} />
+              <p>What is React...</p>
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
       <div className="bottom">
         <div className="bottom-item recent-entry">
           <Question size={20} />
-          <p>Help</p>
+          {extended ? <p>Help</p> : null}
         </div>
         <div className="bottom-item recent-entry">
           <ArrowCounterClockwise size={20} />
-          <p>Activities</p>
+          {extended ? <p>Activities</p> : null}
         </div>
         <div className="bottom-item recent-entry">
           <Gear size={20} />
-          <p>Settings</p>
+          {extended ? <p>Settings</p> : null}
         </div>
       </div>
     </div>
