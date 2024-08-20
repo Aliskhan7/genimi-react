@@ -1,5 +1,12 @@
 import React from "react";
-import { Compass, User } from "@phosphor-icons/react";
+import {
+  ChatDots,
+  Code,
+  Compass,
+  Gear,
+  Lightbulb,
+  User,
+} from "@phosphor-icons/react";
 import "./Main.css";
 
 const Main = () => {
@@ -14,20 +21,24 @@ const Main = () => {
           <p>
             <span>Hello, Dev</span>
           </p>
-          <Compass size={30} />
+          <p>How can I help you today?</p>
         </div>
         <div className="cards">
           <div className="card">
             <p>Suggest beautiful place to see on an upcoming road trip.</p>
-            <Compass size={30} />
+            <Compass className="cars-icon" size={35} />
           </div>
           <div className="card">
-            <p>Suggest beautiful place to see on an upcoming road trip.</p>
-            <Compass size={30} />
+            <p>Briefly summarize this concept: urban planning</p>
+            <Lightbulb className="cars-icon" size={35} />
           </div>
           <div className="card">
-            <p>Suggest beautiful place to see on an upcoming road trip.</p>
-            <Compass size={30} />
+            <p>Brainstorm team bonding activities for our work retreat</p>
+            <ChatDots className="cars-icon" size={35} />
+          </div>
+          <div className="card">
+            <p>Tell me about React js and React native.</p>
+            <Code className="cars-icon" size={35} />
           </div>
         </div>
       </div>
