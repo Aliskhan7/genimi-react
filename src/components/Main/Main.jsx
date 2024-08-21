@@ -41,6 +41,12 @@ const Main = () => {
             <Code className="cars-icon" size={35} />
           </div>
         </div>
+
+        <div className="main-bottom">
+          <div className="search-box">
+            <input type="text" placeholder="Enter a prompt" />
+          </div>
+        </div>
       </div>
     </div>
   );
