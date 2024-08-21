@@ -3,9 +3,11 @@ import {
   ChatDots,
   Code,
   Compass,
-  Gear,
   Lightbulb,
+  PaperPlaneRight,
   User,
+  Image,
+  Microphone,
 } from "@phosphor-icons/react";
 import "./Main.css";
 
@@ -44,8 +46,17 @@ const Main = () => {
 
         <div className="main-bottom">
           <div className="search-box">
-            <input type="text" placeholder="Enter a prompt" />
+            <input type="text" placeholder="Enter a prompt here" />
+            <div>
+              <Image size={20} />
+              <Microphone size={20} />
+              <PaperPlaneRight size={20} />
+            </div>
           </div>
+          <p className="bottom-info">
+            Gemini may display inaccurate info, including about people, so
+            double-check its responses. Your privacy and Gemini Apps
+          </p>
         </div>
       </div>
     </div>
