@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   ChatDots,
   Code,
@@ -10,8 +10,19 @@ import {
   Microphone,
 } from "@phosphor-icons/react";
 import "./Main.css";
+import { Context } from "../../context/Context.jsx";
 
 const Main = () => {
+  const {
+    onSent,
+    recentPrompt,
+    input,
+    setInput,
+    showResult,
+    loading,
+    resultData,
+  } = useContext(Context);
+
   return (
     <div className="main">
       <div className="nav">
@@ -46,11 +57,18 @@ const Main = () => {
 
         <div className="main-bottom">
           <div className="search-box">
-            <input type="text" placeholder="Enter a prompt here" />
+            <input
+              onChange={(e) => setInput(e.target.value)}
+              value={input}
+              type="text"
+              placeholder="Enter a prompt here"
+            />
             <div>
               <Image size={20} />
               <Microphone size={20} />
-              <PaperPlaneRight size={20} />
+              <button onClick={() => onSent()}>
+                <PaperPlaneRight size={20} />
+              </button>
             </div>
           </div>
           <p className="bottom-info">
