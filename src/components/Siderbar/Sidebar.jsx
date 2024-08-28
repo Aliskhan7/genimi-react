@@ -42,6 +42,12 @@ const Sidebar = () => {
                   className="recent-entry"
                 >
                   <ChatTeardrop size={20} />
+                  <p>
+                    {data.map((item) => {
+                      return <p>{item.text}</p>;
+                    })}
+                    ) }
+                  </p>
                   <p>{item.slice(0, 18)}...</p>
                 </div>
               );

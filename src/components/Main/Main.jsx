@@ -90,9 +90,11 @@ const Main = () => {
             <div>
               <Image size={20} />
               <Microphone size={20} />
-              <button onClick={() => onSent()}>
-                <PaperPlaneRight size={20} />
-              </button>
+              {input ? (
+                <button onClick={() => onSent()}>
+                  <PaperPlaneRight size={20} />
+                </button>
+              ) : null}
             </div>
           </div>
           <p className="bottom-info">
